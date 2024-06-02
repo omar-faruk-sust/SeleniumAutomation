@@ -3,6 +3,8 @@ package assignment;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -13,7 +15,11 @@ import java.util.List;
 
 public class Login {
     public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = new FirefoxDriver();
+        //WebDriver driver = new FirefoxDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.setBrowserVersion("116.0.5845.111");
+        WebDriver driver = new ChromeDriver(options);
 
         // Implicit wait
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
